@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            height: 1000px;
+        }
+
+        .cw{
+            bottom: 10px;
+            left: 780px;
+            width: 550px;
+            height: 400px;
+            background-color: rgb(255, 255, 255);
+            position: fixed;
+            border: 1px solid rgb(12, 12, 12);
+            border-radius: 0.5em;
+        }
+
+        .cw-wid{
+            background-size: cover;
+            height: 87%;
+            padding: 5px;
+        }
+
+        .cw-wid input{
+            width: 78%;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            border-radius: 0.4em;
+        }
+
+        .cw-send{
+            width: 70px;
+            position: absolute;
+            border-radius: 5px;
+            bottom: 6px;
+            right: 10px;
+            background-color: rgb(133, 143, 141);
+        }
+
+        .cht{
+            width: 400%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .barischat{
+            width: 400px;
+            height: 55px;
+            border: 1px solid grey;
+            border-radius: 10px;
+            background-color: rgb(221, 217, 217);
+            margin-bottom: 2px;
+            padding:0px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            word-wrap: break-word;
+        }
+
+        .send{
+            float: left
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="cw">
+        <div class="cw-wid">
+            <div class="cht">
+                <div id="cht">
+                    <div class="barischat">
+                        <p>Hai, Apa kabar?</p>
+                    </div>
+                    <div class="barischat">
+                        <p>Kamu udah makan belum?</p>
+                    </div>
+                </div>
+                <div id="cdg">
+                </div>
+            </div>
+            <input id="inp" type="text">
+            <button id="cw-send" onclick="kirim(fn)" class="cw-send">Send
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        const chatwindow = document.getElementById("chatwindow")
+        const chatwindow_head = document.getElementById("cw-head")
+        const chat = document.getElementById("cht")
+        const inp = document.getElementById("inp")
+        const send = document.getElementById("cw-send")
+        
+        let balonchat = function(chat, text){
+            chat.innerHTML +=`
+            <div class= "barischat">
+                <div class = "balonchat send">
+                    <p>${text}</p>
+                </div>
+            </div>
+            `
+        }
+        
+        function kirim(fn){
+            const text =inp.value;
+            if(text.trim().lenght > 0);
+                return fn(chat, text)
+        }
+        
+        send.addEventListener("click", function(){
+            kirim(balonchat)
+            inp.value= "";
+            inp.focus();
+        })</script>
+</body>
+</html>

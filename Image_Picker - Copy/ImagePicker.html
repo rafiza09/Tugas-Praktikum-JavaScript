@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Picker</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+
+		body{
+			background-color: rgb(240, 209, 170);
+		}
+
+		.judul{
+			text-align: center;
+			margin: 50px;
+		}
+
+		.judul hr{
+			width: 200px;
+		}
+
+		.list{
+			text-align: center;
+			border-radius: 1em;
+		}
+
+		.gambar{
+			margin-top: 50px;
+			text-align: center;
+		}
+
+		.gambar img{
+			width: 500px;
+			border-radius: 10px;
+		}
+	
+	</style>
+</head>
+<body>
+	<div class="judul">
+    	<h2>Prajurit Terkuat</h2>
+		<hr>
+	</div>
+	<div class="list">
+		<form id="list">
+			<select onChange="return choose()" name="pic" id="pic" >
+				<option>--- Choose Prajurit ---</option>
+				<option value="1"> PRAJURIT SPARTA </option>
+				<option value="2"> PRAJURIT SAMURAI </option>
+				<option value="3"> PRAJURIT TEMPLAR </option>
+				<option value="4"> PRAJURIT ASSASSIN </option>
+				<option value="5"> PRAJURIT APACHE </option>
+				<option value="6"> PRAJURIT VIKING </option>
+			</select>
+		</form>
+	</div>
+	<div class = "gambar">
+		<div id="img"></div>
+	</div>
+	<script>
+		function choose(){
+			var choose=document.getElementById("list").pic.value;
+			
+			if (choose =="1"){
+			document.getElementById("img").innerHTML="<img src = 'sparta.jpg'>";
+			window.alert("Ini adalah Prajurit Sparta.jpg");
+			}
+
+			else if (choose=="2"){
+			document.getElementById("img").innerHTML="<img src = 'samurai.jpg'>";
+			window.alert("Ini adalah Prajurit Samurai.jpg");
+			}
+
+			else if (choose=="3"){
+			document.getElementById("img").innerHTML="<img src= 'templar.jpg'>";
+			window.alert("Ini adalah Prajurit Templar.jpg");
+			}
+
+			else if (choose =="4"){
+			document.getElementById("img").innerHTML="<img src='assassin.jpg'>";
+			window.alert("Ini adalah Prajurit Assassin.jpg");
+			}
+		
+			else if (choose=="5"){
+			document.getElementById("img").innerHTML="<img src='apache.jpg'>";
+			window.alert("Ini adalah Prajurit Apache.jpg");
+			}
+		
+			else if (choose=="6"){
+			document.getElementById("img").innerHTML="<img src='viking.jpg'>";
+			window.alert("Ini adalah Prajurit Viking.jpg");
+			}
+		}
+	</script>
+</body>
+</html>
